@@ -38,10 +38,10 @@ The final matrix is [[1,3,1],[1,3,1]], which contains 6 odd numbers.
 //            }
 //        }
 
-        int m = 2;
-        int n = 2;
+        int m = 1;
+        int n = 1;
         int[][] ind = {
-                {0,0},{1,1}
+                {0,0},{0,0}
         };
         System.out.println(oddCells(m,n,ind));
 
@@ -49,29 +49,23 @@ The final matrix is [[1,3,1],[1,3,1]], which contains 6 odd numbers.
     static public int oddCells(int m, int n, int[][] indices) {
         int[][] mat = new int[m][n];
         int count = 0;
-        int i = 0;
-        while(i<m){
-            i = 0;
-            int k = 0;
-            int j = 0;
-            if(i == indices[i][0]){
-                while(j <n){
-                    mat[i][j] = mat[i][j] + 1;
-                    j++;
-                }
+        for(int i= 0; i<indices.length;i++){
+            int z = indices[i][0];
+            for(int j = 0; j<n; j++){
+                mat[z][j] = mat[z][j] + 1;
             }
-            j = 0;
-            while(j < n && k <m){
-                if(j == indices[i][1]){
-                    mat[k][j] = mat[k][j] + 1;
-                    k++;
-                }
-                else {
-                    j++;
-                }
-            }
-            display(mat,m,n);
         }
+        display(mat,m,n);
+
+//         adding columns
+        for(int i= 0; i<indices.length;i++){
+            int k = indices[i][1];
+            for(int j = 0; j<m; j++){
+                mat[j][k] = mat[j][k] +1;
+            }
+        }
+            display(mat,m,n);
+
         for(int i = 0; i<m;i++){
             for(int j = 0; j<n;j++){
                 if(mat[i][j] % 2 != 0){
