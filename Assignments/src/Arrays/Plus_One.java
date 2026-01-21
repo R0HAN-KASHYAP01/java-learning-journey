@@ -4,42 +4,51 @@ import java.util.Arrays;
 
 public class Plus_One {
     static void main(String[] args) {
-        int[] arr = {1,2,3};
+        int[] arr = {9,9};
         int[] res = plusOne(arr);
         System.out.println(Arrays.toString(res));
 
     }
     static public int[] plusOne(int[] digits) {
         int sum = 0;
-        int size = 0;
-        if(digits[0] == 9 && digits[digits.length-1] == 9){
-            size = digits.length+1;
-        }else{
+        int size = digits.length;
+        int sum2 = 1;
+        for (int i = 0; i < size; i++) {
+            sum = sum*10+ digits[i];
+            sum2 *= 10;
+        }
+        if (sum2 - 1 == sum) {
+            size = digits.length + 1;
+        } else {
             size = digits.length;
         }
 
         int[] result = new int[size];
-        if(digits[0] == 9 && digits[digits.length-1] == 9){
-            result[0] =1;
-            for(int i = 1; i<size;i++){
+        if (sum2 - 1 == sum) {
+            result[0] = 1;
+            for (int i = 1; i < size; i++) {
                 result[i] = 0;
             }
-        }else{
+        } else {
             size = digits.length;
-            int c =0;
-            for(int i = size-1;i>=0;i--){
-                if(digits[i] == 9){
+            int c = 1;
+            for (int i = size - 1; i >= 0; i--) {
+                if (digits[i] == 9 && c == 1) {
                     result[i] = 0;
                     c = 1;
-                }
-                else{
-                    result[i] = digits[i] + c+1;
+                } else {
+                    if (i == size - 1) {
+
+                        result[i] = digits[i] + c;
+                    } else {
+
+                        result[i] = digits[i] + c;
+                    }
                     c = 0;
                 }
             }
         }
 
         return result;
-
     }
-}
+    }
