@@ -1,11 +1,21 @@
 package Day7_BinarySearch_Question;
 
+import java.util.Scanner;
+
 public class Infinte_Array {
 
         public static void main(String[] args) {
-            int[] arr = {3, 5, 7, 9, 10, 90,
-                    100, 130, 140, 160, 170};
-            int target = 10;
+
+            Scanner input = new Scanner(System.in);
+            System.out.println("Enter the size of the array: ");
+            int size = input.nextInt();
+            int[] arr = new int[size];
+            System.out.println("Enter the elements of the array: ");
+            for (int i = 0; i<size; i++){
+                arr[i] = input.nextInt();
+            }
+            System.out.println("Enter the target element: ");
+            int target = input.nextInt();
             System.out.println(ans(arr, target));
         }
         static int ans(int[] arr, int target) {
