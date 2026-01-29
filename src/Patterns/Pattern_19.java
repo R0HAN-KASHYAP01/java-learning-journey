@@ -2,18 +2,18 @@ package Patterns;
 
 import java.util.Scanner;
 
-public class Pattern_18 {
+public class Pattern_19 {
     /*
-      **********
-      ****  ****
-      ***    ***
-      **      **
-      *        *
-      *        *
-      **      **
-      ***    ***
-      ****  ****
-      **********
+
+       *        *
+       **      **
+       ***    ***
+       ****  ****
+       **********
+       ****  ****
+       ***    ***
+       **      **
+       *        *
 
      */
     static void main(String[] args) {
@@ -25,10 +25,10 @@ public class Pattern_18 {
 
     }
     static void pattern(int n){
-        for(int i =1; i<=2*n; i++){
-            int row = i <= n ? i : 2*n -i +1;
+        for(int i =1; i<2*n; i++){
+            int row = i <= n ? i : 2*n -i ;
             for(int j = 1; j<=2*n; j++){
-                if(j <= n-row+1 || j>= n+row){
+                if(j <= row || j >= 2*n-row+1){
                     System.out.print("*");
                 }
                 else{
