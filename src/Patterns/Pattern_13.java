@@ -21,28 +21,17 @@ public class Pattern_13 {
     }
     static void pattern(int n){
         for(int i =1; i<=n; i++){
-//          f
-
-            if(i == 1){
-                for (int j = 1; j<= n-1; j++){
-                    System.out.print(" ");
-                }
-                System.out.print("*");
+            for (int space = 1; space <= n-i; space++){
+                System.out.print(" ");
             }
-            else if(i == n){
-                for (int j = 1; j <=2*n-1;j++){
+            for (int col = 1; col <= 2*i-1; col++){
+                if (col == 1 || i== n || col == 2*i-1){
                     System.out.print("*");
                 }
-            }
-            else{
-                for (int j = 1; j <= n-i;j++){
+                else{
                     System.out.print(" ");
                 }
-                System.out.print("*");
-                for (int j = 1; j<2*(i-1);j++){
-                    System.out.print(" ");
-                }
-                System.out.print("*");
+
             }
             System.out.println();
         }
