@@ -2,7 +2,7 @@ package Patterns;
 
 import java.util.Scanner;
 
-public class Patern_14 {
+public class Pattern_14 {
     /*
      *********
       *     *
