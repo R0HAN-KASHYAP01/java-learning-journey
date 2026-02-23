@@ -28,6 +28,7 @@ public class Intersection_of_Two_Arrays_II {
             0 <= nums1[i], nums2[i] <= 1000
      */
     static void main(String[] args) {
+        int x = Integer.MIN_VALUE;
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the size of array 1: ");
         int size1 = input.nextInt();
